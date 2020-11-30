@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .heart {
+      margin: 100px;
+      display: inline-block;
+      position: relative;
+      transition: all 0.5s;
+    }
+    .heart:hover {
+      transform: scale(1.5);
+    }
+    .heart > .left {
+      width: 100px;
+      height: 100px;
+      border: 1px solid red;
+      position: absolute;
+      bottom: 100%;
+      right: 100%;
+      transform: rotate(45deg) translateX(80px);
+      border-radius: 50% 0 0 50%;
+      background: red;
+    }
+
+    .heart > .right {
+      width: 100px;
+      height: 100px;
+      border: 1px solid red;
+      position: absolute;
+      bottom: 100%;
+      left: 100%;
+      border-radius: 50% 50% 0 0;
+      transform: rotate(45deg) translateY(80px);
+      border-radius: ;
+      background: red;
+    }
+
+    .heart > .bottom {
+      width: 100px;
+      height: 100px;
+      border: 1px solid red;
+      transform: rotate(45deg);
+      background: red;
+    }
+  </style>
+  <body>
+    <div class="heart">
+      <div class="left"></div>
+      <div class="right"></div>
+      <div class="bottom"></div>
+    </div>
+  </body>
+</html>
