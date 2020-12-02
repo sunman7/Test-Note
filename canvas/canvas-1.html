@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=
+    , initial-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>画板</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    #canvas {
+      display: block;
+    }
+  </style>
+  <body>
+    <canvas id="canvas" width="100" height="100"> </canvas>
+    <script>
+      var canvas = document.getElementById("canvas");
+      var ctx = canvas.getContext("2d");
+      canvas.width = document.documentElement.clientWidth;
+      canvas.height = document.documentElement.clientHeight;
+      ctx.fillStyle = "black";
+      ctx.strokeStyle = "none";
+      let flag = false;
+
+      var isTouchDevice = "ontouchstart" in document.documentElement;
+
+      if (isTouchDevice) {
+        console.log("手机");
+        canvas.ontouchmove = (e) => {
+          ctx.beginPath();
+          ctx.arc(
+            e.touches[0].clientX,
+            e.touches[0].clientY,
+            30,
+            0,
+            2 * Math.PI
+          );
+          ctx.stroke();
+          ctx.fill();
+        };
+      } else {
+        canvas.onmousedown = () => {
+          flag = true;
+        };
+
+        canvas.onmousemove = (e) => {
+          if (flag === true) {
+            ctx.beginPath();
+            ctx.arc(e.clientX, e.clientY, 30, 0, 2 * Math.PI);
+            ctx.stroke();
+            ctx.fill();
+          }
+        };
+        canvas.onmouseup = () => {
+          flag = false;
+        };
+      }
+    </script>
+  </body>
+</html>
