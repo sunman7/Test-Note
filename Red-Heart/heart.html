@@ -15,10 +15,15 @@
       margin: 100px;
       display: inline-block;
       position: relative;
-      transition: all 0.5s;
+      animation: beat 900ms infinite alternate;
     }
-    .heart:hover {
-      transform: scale(1.5);
+    @keyframes beat {
+      0% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(1.5);
+      }
     }
     .heart > .left {
       width: 100px;
