@@ -4,12 +4,12 @@ let style = document.querySelector("#style");
 
 let str = `
 /*
-蒋武你是傻逼
-你是傻逼
-真的傻逼
-无比傻逼*/
+哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
+哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
+哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
+*/
 
-/* 将武老阴阳人了 */
+/* 太极阴阳 */
 #div1 {
     border: 1px solid red;
     width: 200px;
