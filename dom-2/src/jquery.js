@@ -54,10 +54,9 @@ window.jQuery = function (selectorOrArray) {
     siblings() {
       const arr = [];
       this.each((node) => {
-        console.log(node.parentNode.children[0] !== node);
         for (let i = 0; i < node.parentNode.children.length; i++) {
           if (node.parentNode.children[i] !== node) {
-            arr.push(...node.parentNode.children[i]);
+            arr.push(node.parentNode.children[i]);
           }
         }
       });
