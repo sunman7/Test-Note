@@ -5,7 +5,11 @@ window.$ = window.jQuery = function (selectorOrArray) {
   } else if (selectorOrArray instanceof Array) {
     elements = selectorOrArray;
   }
-
+  function createElement(string) {
+    const container = document.createElement("template");
+    container.innerHTML = string.trim();
+    return container.content.firstChild;
+  }
   const api = Object.create(jQuery.prototype);
   //创建一个对象，对象的__proto__为JQuery.prototype;
   Object.assign(api, {
@@ -19,7 +23,24 @@ window.$ = window.jQuery = function (selectorOrArray) {
 jQuery.fn = jQuery.prototype = {
   jQuery: true,
   constructor: jQuery,
-
+  on(eventType, element, selector, fn) {
+    if (element instanceof Element) {
+      element = document.querySelector(element);
+    }
+    element.addEventListener(eventType, (e) => {
+      let t = e.target;
+      while (!t.matches(selector)) {
+        if (element === t) {
+          //到了被事件委托的监听元素还没找到，说明找不到了 break
+          t = null;
+          break;
+        }
+        t = t.parentNode;
+      }
+      t && fn.call(t, e, t); //找到了，传过去target和currentTarget
+    });
+    return element;
+  },
   get(index) {
     return this.elements[index];
   },
