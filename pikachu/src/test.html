@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta
+            name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Document</title>
+</head>
+<body>
+<style>
+    *{
+        box-sizing: border-box;
+    }
+    #demo2 {
+        display: none;
+    }
+    #demo{
+        position: fixed;
+        height: 50vh;
+        top: 0;
+        left: 0;
+        width: 100%;
+        overflow-y: auto;
+
+    }
+    #output::-webkit-scrollbar,#demo::-webkit-scrollbar{
+        display: none;
+    }
+
+    #output {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 50vh;
+        overflow-y: auto;
+    }
+    #buttons{
+        position: fixed;
+        z-index : 10;
+        right: 10px;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+    }
+    #buttons > button{
+        margin-bottom: 10px;
+        padding: 4px 8px;
+    }
+</style>
+<div id="demo"></div>
+<style id="demo2"></style>
+<div id="buttons">
+    <button id="btnPause">暂停</button>
+    <button id="btnPlay">播放</button>
+    <button id="slow">慢速</button>
+    <button id="normal">中速</button>
+    <button id="fast">快速</button>
+</div>
+<div id="output">
+    <div class="skin">
+        <div class="eye left"></div>
+        <div class="eye right"></div>
+        <div class="nose">
+            <div class="san">
+                <div class="yuan"></div>
+            </div>
+        </div>
+        <div class="face left">
+        </div>
+        <div class="face right">
+        </div>
+        <div class="mouth">
+            <div class="up">
+                <div class="lip left"></div>
+                <div class="lip right"></div>
+            </div>
+            <div class="down">
+                <div class="yuan1">
+                    <div class="yuan2"></div>
+                </div>
+            </div>
+        </div>
+        <face></face>
+    </div>
+</div>
+<script src="test.js"></script>
+</body>
+</html>
